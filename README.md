@@ -1,1 +1,1 @@
-# itunes-web-helper
+# (Yet Another) iTunes Artwork Grabber
