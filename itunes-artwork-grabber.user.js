@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iTunes Artwork Grabber by Tunghsiao Liu
 // @namespace    https://github.com/sparanoid/itunes-artwork-grabber
-// @version      1.0.0
+// @version      1.0.1
 // @description  Yet another iTunes Artwork Grabber
 // @author       Tunghsiao Liu
 // @include	     *://itunes.apple.com/*/*
@@ -13,6 +13,7 @@
 var artworkWrap = $("#left-stack div.lockup.product");
 var artworkSize = "1024x1024";
 var artworkTarget = artworkWrap.find("div.artwork img.artwork");
+var forcePng = true;
 
 if (artworkWrap.hasClass("music") || artworkWrap.hasClass("tv")) {
   artworkSize = "1200x1200";
@@ -20,8 +21,12 @@ if (artworkWrap.hasClass("music") || artworkWrap.hasClass("tv")) {
   artworkSize = "512-2x";
 }
 
+if (!artworkWrap.hasClass("application")) {
+  forcePng = false;
+}
+
 // https://regex101.com/r/mG3hX6/2
-var artworkUrl = artworkTarget.attr("src").replace(/(\/[a-zA-Z]+)(\d+(-\dx|x\d+)?)(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + "$4");
+var artworkUrl = artworkTarget.attr("src").replace(/(\/[a-zA-Z]+)(\d+(-\dx|x\d+)?)(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + (forcePng ? ".png" : "$4") );
 
 // Init button
 $("<div style='margin-bottom: 20px;'> \
