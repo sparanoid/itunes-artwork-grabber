@@ -1,0 +1,18 @@
+{
+  "name": "iTunes Artwork Grabber",
+  "description": "Get high-res artwork for apps, music, books, movies, TV shows, and more, all types supported.",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "default_locale": "en",
+  "icons": {
+    "128": "Icon.png"
+  },
+  "homepage_url": "http://github.com/sparanoid/itunes-artwork-grabber",
+  "content_scripts": [
+    {
+      "matches": ["*://itunes.apple.com/*"],
+      "js": ["itunes-artwork-grabber.user.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
