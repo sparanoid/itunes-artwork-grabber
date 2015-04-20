@@ -29,7 +29,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>(Yet Another) iTunes Artwork Grabber</string>
+	<string>Get high-res artwork for apps, music, books, movies, TV shows, and more, all types supported.</string>
 	<key>DeveloperIdentifier</key>
 	<string>B5483RCL5H</string>
 	<key>ExtensionInfoDictionaryVersion</key>
@@ -49,8 +49,8 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>https://raw.githubusercontent.com/sparanoid/itunes-artwork-grabber/master/safari-extension-updater.plist</string>
+	<string>https://raw.githubusercontent.com/sparanoid/itunes-artwork-grabber/master/safari/update.plist</string>
 	<key>Website</key>
-	<string>https://github.com/sparanoid/itunes-artwork-grabber</string>
+	<string>http://github.com/sparanoid/itunes-artwork-grabber</string>
 </dict>
 </plist>
