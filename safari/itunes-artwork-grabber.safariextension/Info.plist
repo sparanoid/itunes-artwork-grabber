@@ -51,6 +51,6 @@
 	<key>Update Manifest URL</key>
 	<string>https://raw.githubusercontent.com/sparanoid/itunes-artwork-grabber/master/safari/update.plist</string>
 	<key>Website</key>
-	<string>http://github.com/sparanoid/itunes-artwork-grabber</string>
+	<string>http://sparanoid.com/work/itunes-artwork-grabber/</string>
 </dict>
 </plist>
