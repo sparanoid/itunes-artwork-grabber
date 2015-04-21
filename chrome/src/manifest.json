@@ -7,7 +7,7 @@
   "icons": {
     "128": "Icon.png"
   },
-  "homepage_url": "http://github.com/sparanoid/itunes-artwork-grabber",
+  "homepage_url": "http://sparanoid.com/work/itunes-artwork-grabber/",
   "content_scripts": [
     {
       "matches": ["*://itunes.apple.com/*"],
