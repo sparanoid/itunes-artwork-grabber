@@ -1,10 +1,10 @@
 {
   "appName": {
-    "message": "iTunes Artwork Grabber",
+    "message": "iTunes Artwork Grabber (封面提取)",
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "Get high-res artwork for apps, music, books, movies, TV shows, and more, all types supported.",
+    "message": "獲取取全高清的應用圖標、專輯封麵、圖書封麵、電影海報等等。支持絕大多數 iTunes 以及 Mac App Store 商店中的內容",
     "description": "The description of the application"
   }
 }
