@@ -31,7 +31,7 @@
   }
 
   // https://regex101.com/r/mG3hX6/2
-  var artworkUrl = artworkTarget.getAttribute('src').replace(/(\/[a-zA-Z]+)(\d+(-\dx|x\d+)?)(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + (forcePng ? ".png" : "$4"));
+  var artworkUrl = artworkTarget.getAttribute('src-swap').replace(/(\/[a-zA-Z]+)(\d+(-\dx|x\d+)?)(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + (forcePng ? ".png" : "$4"));
 
   // Init button
   var btnCss = '#get-app-artwork { \
