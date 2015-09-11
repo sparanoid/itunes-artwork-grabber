@@ -12,9 +12,9 @@
        <key>CFBundleVersion</key>
        <string>1</string>
        <key>CFBundleShortVersionString</key>
-       <string>1.0.1</string>
+       <string>1.0.2</string>
        <key>URL</key>
-       <string>https://github.com/sparanoid/itunes-artwork-grabber/releases/download/v1.0.1/itunes-artwork-grabber.safariextz</string>
+       <string>https://github.com/sparanoid/itunes-artwork-grabber/releases/download/v1.0.2/itunes-artwork-grabber.safariextz</string>
      </dict>
    </array>
 </dict>
