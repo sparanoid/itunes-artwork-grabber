@@ -1,6 +1,6 @@
 {
-  "name": "iTunes Artwork Grabber",
-  "description": "Get high-res artwork for apps, music, books, movies, TV shows, and more, all types supported.",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDescription__",
   "version": "1.0.1",
   "manifest_version": 2,
   "default_locale": "en",
