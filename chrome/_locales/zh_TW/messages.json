@@ -4,7 +4,7 @@
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "獲取取全高清的應用圖標、專輯封麵、圖書封麵、電影海報等等。支持絕大多數 iTunes 以及 Mac App Store 商店中的內容",
+    "message": "獲取取全高清的應用圖標、專輯封麵、圖書封麵、電影海報等等。支持所有 iTunes 以及 Mac App Store 商店中的內容",
     "description": "The description of the application"
   }
 }
