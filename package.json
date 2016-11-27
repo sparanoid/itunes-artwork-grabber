@@ -3,7 +3,14 @@
   "version": "1.0.3",
   "author": "Tunghsiao Liu",
   "homepage": "http://sparanoid.com/work/itunes-artwork-grabber/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sparanoid/itunes-artwork-grabber.git"
+  },
   "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^3.2.0"
   }
 }
