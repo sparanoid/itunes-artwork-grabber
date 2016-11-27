@@ -33,6 +33,7 @@ node_modules
 bower_components
 
 # Project specified
+dist/
 *.safariextz
 *.crx
 *.pem
