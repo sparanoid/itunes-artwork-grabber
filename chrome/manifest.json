@@ -7,11 +7,11 @@
   "icons": {
     "128": "Icon.png"
   },
-  "homepage_url": "http://sparanoid.com/work/itunes-artwork-grabber/",
+  "homepage_url": "https://sparanoid.com/work/itunes-artwork-grabber/",
   "content_scripts": [
     {
       "matches": ["*://itunes.apple.com/*"],
-      "js": ["itunes-artwork-grabber.user.js"],
+      "js": ["scripts/itunes-artwork-grabber.user.js"],
       "run_at": "document_end"
     }
   ]
