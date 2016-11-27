@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iTunes Artwork Grabber by Tunghsiao Liu
 // @namespace    https://sparanoid.com/work/itunes-artwork-grabber/
-// @version      1.0.1
+// @version      1.0.3
 // @description  Yet another iTunes Artwork Grabber
 // @author       Tunghsiao Liu
 // @include      *://itunes.apple.com/*/*
@@ -9,7 +9,7 @@
 // @run-at       document-end
 // ==/UserScript==
 
-+function initiTunesArtworkGrabberTL() {
+(function initiTunesArtworkGrabberTL() {
 
   var artworkWrap = document.querySelectorAll('#left-stack div.lockup.product')[0];
   var artworkSize = '1024x1024';
@@ -87,6 +87,4 @@
     window.open(artworkUrl, "_blank");
   });
 
-  alert(safari.extension.settings.forcePng);
-
-}();
+}());
