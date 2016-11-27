@@ -30,7 +30,7 @@ Frame rate sucks? try [video demo](https://www.youtube.com/watch?v=8NVyzKb7VIY).
 
 ## Unsupported Types
 
-- None
+- None! (since Nov 27, 2016)
 
 ## Love this?
 
