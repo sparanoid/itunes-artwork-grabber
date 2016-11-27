@@ -20,6 +20,7 @@ Frame rate sucks? try [video demo](https://www.youtube.com/watch?v=8NVyzKb7VIY).
 - iOS app icons
 - OS X app icons
 - Music album covers
+- Music video thumbnails
 - Book covers
 - Movie posters
 - TV show covers
@@ -29,7 +30,7 @@ Frame rate sucks? try [video demo](https://www.youtube.com/watch?v=8NVyzKb7VIY).
 
 ## Unsupported Types
 
-- Music video thumbnails
+- None
 
 ## Love this?
 

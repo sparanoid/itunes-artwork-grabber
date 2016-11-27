@@ -4,7 +4,7 @@
     "description": "The name of the application"
   },
   "appDescription": {
-    "message": "获取全高清的应用图标、专辑封面、图书封面、电影海报等等。支持绝大多数 iTunes 以及 Mac App Store 商店中的内容",
+    "message": "获取全高清的应用图标、专辑封面、图书封面、电影海报等等。支持所有 iTunes 以及 Mac App Store 商店中的内容",
     "description": "The description of the application"
   }
 }

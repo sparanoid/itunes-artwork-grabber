@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         iTunes Artwork Grabber by Tunghsiao Liu
 // @namespace    https://sparanoid.com/work/itunes-artwork-grabber/
-// @version      1.0.3
+// @version      1.0.4
 // @description  Yet another iTunes Artwork Grabber
 // @author       Tunghsiao Liu
 // @include      *://itunes.apple.com/*/*
@@ -9,29 +9,42 @@
 // @run-at       document-end
 // ==/UserScript==
 
+// Test URLs
+//     iOS app: https://itunes.apple.com/us/app/id284882215
+//   macOS app: https://itunes.apple.com/us/app/id824171161
+//       Music: https://itunes.apple.com/gb/album/id965610909
+// Music Video: https://itunes.apple.com/us/music-video/id1169103502
+//        Book: https://itunes.apple.com/us/book/id936502684
+//       Movie: https://itunes.apple.com/us/movie/id929423754
+//          TV: https://itunes.apple.com/us/tv-season/id849050573
+//     Podcast: https://itunes.apple.com/us/podcast/id415535037
+//    iTunes U: https://itunes.apple.com/us/itunes-u/id593073857
+//   Audiobook: https://itunes.apple.com/us/audiobook/id404237394
+
 (function initiTunesArtworkGrabberTL() {
 
+  // Try a large enough size for artwork due to there's no way to get the
+  // actual largest size available through the web page.
+  var artworkSize = '9000x9000';
+  var artworkFormat = '.png';
   var artworkWrap = document.querySelectorAll('#left-stack div.lockup.product')[0];
-  var artworkSize = '1024x1024';
   var artworkTarget = artworkWrap.querySelectorAll('div.artwork img.artwork')[0];
-  var forcePng = true;
 
   function hasClass(el, cls) {
     return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
   }
 
-  if (hasClass(artworkWrap, 'music') || hasClass(artworkWrap, 'tv')) {
-    artworkSize = "1200x1200";
-  } else if (hasClass(artworkWrap, 'mac-application')) {
-    artworkSize = "512-2x";
+  function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 
+  // Always use jpg for non-app artwork
   if (!hasClass(artworkWrap, 'application')) {
-    forcePng = false;
+    artworkFormat = '.jpg';
   }
 
-  // https://regex101.com/r/mG3hX6/2
-  var artworkUrl = artworkTarget.getAttribute('src-swap').replace(/(\/[a-zA-Z]+)(\d+(-\dx|x\d+)?)(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + (forcePng ? ".png" : "$4"));
+  // https://regex101.com/r/mG3hX6/5
+  var artworkUrl = artworkTarget.getAttribute('src-swap').replace(/(\/[a-zA-Z]+\/)(\d+(?:-\dx|x\d+)?([a-zA-Z]+))(\.[a-zA-Z]+)$/gim, "$1" + artworkSize + artworkFormat);
 
   // Init button
   var btnCss = '#get-app-artwork { \
@@ -66,13 +79,9 @@
 
   head.appendChild(btnStyle);
 
-  function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
   var artworkBtnInitTarget = document.querySelectorAll('div.lockup.product .action')[0];
   var artworkBtnInitElement = document.createElement('div');
-  artworkBtnInitElement.innerHTML = '<a id=get-app-artwork>View artwork in new tab</a></div>';
+  artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a></div>';
   insertAfter(artworkBtnInitTarget, artworkBtnInitElement);
 
   // Margin fix for Mac App Store
@@ -80,11 +89,5 @@
   if (macAppStoreBtn) {
     macAppStoreBtn.style.height = '23px';
   }
-
-  // Open artwork in new tab
-  document.getElementById('get-app-artwork').addEventListener("click", function() {
-    // prompt("Press command - C to copy:", artworkUrl);
-    window.open(artworkUrl, "_blank");
-  });
 
 }());
