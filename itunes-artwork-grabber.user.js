@@ -10,16 +10,17 @@
 // ==/UserScript==
 
 // Test URLs
-//     iOS app: https://itunes.apple.com/us/app/id284882215
-//   macOS app: https://itunes.apple.com/us/app/id824171161
-//       Music: https://itunes.apple.com/gb/album/id965610909
-// Music Video: https://itunes.apple.com/us/music-video/id1169103502
-//        Book: https://itunes.apple.com/us/book/id936502684
-//       Movie: https://itunes.apple.com/us/movie/id929423754
-//          TV: https://itunes.apple.com/us/tv-season/id849050573
-//     Podcast: https://itunes.apple.com/us/podcast/id415535037
-//    iTunes U: https://itunes.apple.com/us/itunes-u/id593073857
-//   Audiobook: https://itunes.apple.com/us/audiobook/id404237394
+//      iOS app: https://itunes.apple.com/us/app/id284882215
+//    macOS app: https://itunes.apple.com/us/app/id824171161
+// Apple TV app: https://itunes.apple.com/us/app/id902062673
+//        Music: https://itunes.apple.com/gb/album/id965610909
+//  Music Video: https://itunes.apple.com/us/music-video/id1169103502
+//         Book: https://itunes.apple.com/us/book/id936502684
+//        Movie: https://itunes.apple.com/us/movie/id929423754
+//           TV: https://itunes.apple.com/us/tv-season/id849050573
+//      Podcast: https://itunes.apple.com/us/podcast/id415535037
+//     iTunes U: https://itunes.apple.com/us/itunes-u/id593073857
+//    Audiobook: https://itunes.apple.com/us/audiobook/id404237394
 
 (function initiTunesArtworkGrabberTL() {
 
@@ -79,7 +80,7 @@
 
   head.appendChild(btnStyle);
 
-  var artworkBtnInitTarget = document.querySelectorAll('div.lockup.product .action')[0];
+  var artworkBtnInitTarget = document.querySelectorAll('div.lockup.product .action')[0] || document.querySelectorAll('.atv-only-get-or-buy-blurb')[0];
   var artworkBtnInitElement = document.createElement('div');
   artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a></div>';
   insertAfter(artworkBtnInitTarget, artworkBtnInitElement);
