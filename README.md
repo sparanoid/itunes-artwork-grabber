@@ -1,5 +1,7 @@
 # (Yet Another) iTunes Artwork Grabber
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sparanoid/itunes-artwork-grabber.svg)](https://greenkeeper.io/)
+
 Get high-res artwork for apps, music, books, movies, TV shows, podcasts and more, all types supported. Works with Google Chrome, and Greasemonkey / Tampermonkey / Scriptish / etc.
 
 ## Demo
