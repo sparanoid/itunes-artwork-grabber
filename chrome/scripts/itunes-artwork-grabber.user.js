@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         iTunes Artwork Grabber by Tunghsiao Liu
+// @name         Artwork Grabber by Tunghsiao Liu
 // @namespace    https://sparanoid.com/work/itunes-artwork-grabber/
 // @version      1.0.5
-// @description  Yet another iTunes Artwork Grabber
+// @description  Yet another artwork grabber
 // @author       Tunghsiao Liu
 // @include      *://itunes.apple.com/*/*
 // @grant        none
