@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Artwork Grabber by Sparanoid
 // @namespace    https://sparanoid.com/work/itunes-artwork-grabber/
-// @version      1.0.6
+// @version      1.0.7
 // @description  Yet another artwork grabber
 // @author       Sparanoid
 // @include      *://itunes.apple.com/*/*
