@@ -1,4 +1,4 @@
-# (Yet Another) iTunes Artwork Grabber
+# (Yet Another) Artwork Grabber
 
 Get high-res artwork for apps, music, books, movies, TV shows, podcasts and more, all types supported. Works with Google Chrome, and Greasemonkey / Tampermonkey / Scriptish / etc.
 
