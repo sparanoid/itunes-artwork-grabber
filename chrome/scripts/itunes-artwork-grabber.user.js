@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
   var artworkSize = '9000x9000';
   var artworkFormat = '.png';
   var artworkWrap = document.querySelectorAll('#left-stack div.lockup.product')[0];
-  var artworkRegex = /(\/[a-zA-Z]+\/)(\d+(?:-\dx|x\d+)?([a-zA-Z]+))(\.[a-zA-Z]+)$/gim; // https://regex101.com/r/mG3hX6/5
+  var artworkRegex = /(\/)(\d+(?:-\dx|x\d+)?([a-zA-Z]+))(\.[a-zA-Z]+)$/gim; // https://regex101.com/r/mG3hX6/6
   var artworkTarget;
   var artworkUrl;
   var btnCss;
@@ -90,7 +90,10 @@ window.addEventListener('load', function() {
   // Check if Apple uses new layout for current page
   if (typeof artworkWrap === 'undefined') {
     isNewLayout = true;
-    artworkWrap = document.querySelectorAll('picture.product-artwork')[0] || document.querySelectorAll('picture.we-video-thumbnail__artwork')[0];
+    artworkWrap =
+      document.querySelectorAll('picture.product-artwork')[0] ||
+      document.querySelectorAll('picture.we-video-thumbnail__artwork')[0] ||
+      document.querySelectorAll('picture.product-hero__artwork')[0];
   }
 
   function initArtwork() {
@@ -102,7 +105,7 @@ window.addEventListener('load', function() {
       btnCss = '';
       insertStyle(btnCss);
 
-      artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a></div>';
+      artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" class="link" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a>';
     } else {
       artworkTarget = artworkWrap.querySelectorAll('div.artwork img.artwork')[0];
 
@@ -136,19 +139,20 @@ window.addEventListener('load', function() {
 
       insertStyle(btnCss);
 
-      artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a></div>';
+      artworkBtnInitElement.innerHTML = '<a id="get-app-artwork" href="' + artworkUrl + '" target="_blank">View artwork in new tab</a>';
     }
   }
 
   function createDom() {
 
     if (isNewLayout) {
-      artworkBtnInitTarget = document.querySelectorAll('.product-hero-desc')[0] || document.querySelectorAll('.we-video-thumbnail')[0];
+      artworkBtnInitTarget = document.querySelectorAll('.product-header__list > li:last-child')[0];
+      artworkBtnInitElement = document.createElement('li');
     } else {
       artworkBtnInitTarget = document.querySelectorAll('div.lockup.product .action')[0] || document.querySelectorAll('.atv-only-get-or-buy-blurb')[0];
+      artworkBtnInitElement = document.createElement('div');
     }
 
-    artworkBtnInitElement = document.createElement('div');
     insertAfter(artworkBtnInitTarget, artworkBtnInitElement);
   }
 
@@ -160,11 +164,5 @@ window.addEventListener('load', function() {
       console.log('Artwork update!');
       initArtwork();
     });
-  }
-
-  // Margin fix for Mac App Store
-  var macAppStoreBtn = document.querySelectorAll('.view-in-appstore span')[0];
-  if (macAppStoreBtn) {
-    macAppStoreBtn.style.height = '23px';
   }
 }, false);
