@@ -1,21 +1,29 @@
 const gulp = require('gulp');
 const zip = require('gulp-zip');
 
-var version = require('./package').version;
-var chrome = require('./chrome/manifest');
-var src = './itunes-artwork-grabber.user.js';
+const chrome = require('./chrome/manifest');
+const copyFilesSrc = ['./itunes-artwork-grabber.user.js'];
+const copyFilesDesc = './chrome/scripts/';
+const zipFilesSrc = './chrome/**/*';
+const zipFilesDesc = './dist/';
 
-gulp.task('serve', function() {
-  var watcher = gulp.watch(src, ['copy']);
-});
+function copyFiles() {
+  return gulp.src(copyFilesSrc)
+    .pipe(gulp.dest(copyFilesDesc));
+}
 
-gulp.task('copy', function() {
-  gulp.src(src)
-  .pipe(gulp.dest('./chrome/scripts/'));
-});
+function zipFiles() {
+  return gulp.src(zipFilesSrc)
+    .pipe(zip('chrome-extension-' + chrome.version + '.zip'))
+    .pipe(gulp.dest(zipFilesDesc));
+}
 
-gulp.task('default', ['copy'], function() {
-  gulp.src('./chrome/**/*')
-  .pipe(zip('chrome-extension-' + chrome.version + '.zip'))
-  .pipe(gulp.dest('./dist/'));
-});
+function watchFiles() {
+  return gulp.watch(copyFilesSrc, function(cb) {
+    copy();
+    cb();
+  });
+}
+
+exports.serve = gulp.series(watchFiles);
+exports.default = gulp.series(copyFiles, zipFiles);
