@@ -4,7 +4,7 @@
 // @version      1.0.8
 // @description  Yet another artwork grabber
 // @author       Tunghsiao Liu
-// @include      *://itunes.apple.com/*/*
+// @include      *://*.apple.com/*/*
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
@@ -19,8 +19,8 @@
 //        Movie: https://itunes.apple.com/us/movie/id929423754
 //           TV: https://itunes.apple.com/us/tv-season/id849050573
 //      Podcast: https://itunes.apple.com/us/podcast/id415535037
-//     iTunes U: https://itunes.apple.com/us/itunes-u/id593073857
-//    Audiobook: https://itunes.apple.com/us/audiobook/id404237394
+//     iTunes U: https://itunes.apple.com/us/course/id951932247
+//    Audiobook: https://itunes.apple.com/us/audiobook/id1450427914
 
 window.addEventListener('load', function() {
 
