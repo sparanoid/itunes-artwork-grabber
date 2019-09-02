@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git://github.com/sparanoid/itunes-artwork-grabber.git"
   },
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp"
+  },
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
