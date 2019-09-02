@@ -10,7 +10,7 @@
   "homepage_url": "https://sparanoid.com/work/itunes-artwork-grabber/",
   "content_scripts": [
     {
-      "matches": ["*://itunes.apple.com/*"],
+      "matches": ["*://*.apple.com/*"],
       "js": ["scripts/itunes-artwork-grabber.user.js"],
       "run_at": "document_end"
     }

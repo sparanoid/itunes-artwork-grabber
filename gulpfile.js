@@ -20,7 +20,7 @@ function zipFiles() {
 
 function watchFiles() {
   return gulp.watch(copyFilesSrc, function(cb) {
-    copy();
+    copyFiles();
     cb();
   });
 }
